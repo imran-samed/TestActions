@@ -6,31 +6,38 @@
         <indentOptions>
           <option name="CONTINUATION_INDENT_SIZE" value="4" />
         </indentOptions>
+
+        <!-- Arrangement rules to organize XML attributes -->
         <arrangement>
           <rules>
+            <!-- Keep xmlns:android first -->
             <section>
               <rule>
                 <match>
                   <AND>
                     <NAME>xmlns:android</NAME>
                     <XML_ATTRIBUTE />
-                    <XML_NAMESPACE>^$</XML_NAMESPACE>
+                    <XML_NAMESPACE></XML_NAMESPACE>
                   </AND>
                 </match>
               </rule>
             </section>
+
+            <!-- Then order other xmlns by name -->
             <section>
               <rule>
                 <match>
                   <AND>
                     <NAME>xmlns:.*</NAME>
                     <XML_ATTRIBUTE />
-                    <XML_NAMESPACE>^$</XML_NAMESPACE>
+                    <XML_NAMESPACE></XML_NAMESPACE>
                   </AND>
                 </match>
                 <order>BY_NAME</order>
               </rule>
             </section>
+
+            <!-- android:id next -->
             <section>
               <rule>
                 <match>
@@ -42,6 +49,8 @@
                 </match>
               </rule>
             </section>
+
+            <!-- android:name -->
             <section>
               <rule>
                 <match>
@@ -53,40 +62,48 @@
                 </match>
               </rule>
             </section>
+
+            <!-- name without namespace -->
             <section>
               <rule>
                 <match>
                   <AND>
                     <NAME>name</NAME>
                     <XML_ATTRIBUTE />
-                    <XML_NAMESPACE>^$</XML_NAMESPACE>
+                    <XML_NAMESPACE></XML_NAMESPACE>
                   </AND>
                 </match>
               </rule>
             </section>
+
+            <!-- style -->
             <section>
               <rule>
                 <match>
                   <AND>
                     <NAME>style</NAME>
                     <XML_ATTRIBUTE />
-                    <XML_NAMESPACE>^$</XML_NAMESPACE>
+                    <XML_NAMESPACE></XML_NAMESPACE>
                   </AND>
                 </match>
               </rule>
             </section>
+
+            <!-- Other attributes without namespace ordered by name -->
             <section>
               <rule>
                 <match>
                   <AND>
                     <NAME>.*</NAME>
                     <XML_ATTRIBUTE />
-                    <XML_NAMESPACE>^$</XML_NAMESPACE>
+                    <XML_NAMESPACE></XML_NAMESPACE>
                   </AND>
                 </match>
                 <order>BY_NAME</order>
               </rule>
             </section>
+
+            <!-- Android namespaced attributes in Android order -->
             <section>
               <rule>
                 <match>
@@ -99,6 +116,8 @@
                 <order>ANDROID_ATTRIBUTE_ORDER</order>
               </rule>
             </section>
+
+            <!-- Other namespaced attributes ordered by name -->
             <section>
               <rule>
                 <match>
@@ -113,6 +132,7 @@
             </section>
           </rules>
         </arrangement>
+
       </codeStyleSettings>
     </code_scheme>
   </component>
